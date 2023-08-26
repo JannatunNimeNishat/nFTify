@@ -7,12 +7,13 @@ const NFTpairRow = ({ nftSinglePair }) => {
 
     // console.log(nftSinglePair);
 
-    const { pairCreatedAt, dexId, pairAddress, baseToken, quoteToken, priceNative, priceUsd } = nftSinglePair;
+    const { pairCreatedAt, dexId, pairAddress, baseToken,  priceNative, priceUsd } = nftSinglePair;
     // console.log(pairCreatedAt, typeof(pairCreatedAt));
     return (
-        <div className='h-screen mt-[22px] flex gap-3'>
+        <div className='lg:h-screen mt-[22px] lg:flex gap-3'>
+
             {/* basic info */}
-            <div className=" relative w-[230px] h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
+            <div className=" relative lg:w-[230px] lg:h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
                 <h3 className="font-bold text-[18px]">Basic Info</h3>
                 <p className="pt-2">Pair created at <span className="ml-3">#{pairCreatedAt.toString().slice(0,4)}</span></p>
                 <p className="pt-1">Symbol <span className="ml-16">{baseToken?.symbol}</span></p>
@@ -25,7 +26,7 @@ const NFTpairRow = ({ nftSinglePair }) => {
             </div>
 
             {/* base token */}
-            <div className=" relative w-[230px] h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
+            <div className=" relative mt-4  lg:mt-0 lg:w-[230px] lg:h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
                 <h3 className="font-bold text-[18px]">Basic Token</h3>
                 <p className="pt-2">Name <span className="ml-16">{baseToken?.name?.split(" ")[0]}</span></p>
                 <p className="pt-2">Symbol <span className="ml-14">{baseToken?.symbol}</span></p>
@@ -37,7 +38,7 @@ const NFTpairRow = ({ nftSinglePair }) => {
             </div>
 
             {/* Quote Token */}
-            <div className=" relative w-[223px] h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
+            <div className=" relative mt-4  lg:mt-0 lg:w-[223px] lg:h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
                 <h3 className="font-bold text-[18px]">Quote Token </h3>
                 <p className="pt-2">Name <span className="ml-16">{baseToken?.name?.split(" ")[0]}</span></p>
                 <p className="pt-2">Symbol <span className="ml-14">{baseToken?.symbol}</span></p>
@@ -48,7 +49,7 @@ const NFTpairRow = ({ nftSinglePair }) => {
                 </button>
             </div>
             {/* price */}
-            <div className=" relative w-[223px] h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
+            <div className=" relative mt-4  lg:mt-0 lg:w-[223px] lg:h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
                 <h3 className="font-bold text-[18px]">Price </h3>
                 <p className="pt-2">Price Native <span className="ml-5">ETH {priceNative?.slice(0, 4)}</span></p>
                 <p className="pt-2">Price USD <span className="ml-8">{priceUsd?.slice(0, 4)}m</span></p>
