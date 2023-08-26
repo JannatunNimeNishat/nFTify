@@ -7,10 +7,14 @@ import pair_logo from './assets/left_side_bar/pair_logo.png';
 import content_bg from './assets/contenet_area/content_bg.png';
 import searchIcon from './assets/contenet_area/searchIcon.png';
 import threeBar from './assets/left_side_bar/threeBar.svg'
+
 import axios from 'axios';
 import NFTrow from './components/NFTrow';
 import NFTpairRow from './components/NFTpairRow';
 import NFTsearchRow from './components/NFTsearchRow';
+import Footer from './components/Footer';
+
+
 function App() {
   const [activeLink, setActiveLink] = useState(1);
   const [nftData, setNftData] = useState([]);
@@ -198,10 +202,14 @@ function App() {
 
             </li>
 
+
           </ul>
+
 
         </div>
       </div>
+
+      <Footer />
     </>
   )
 }
