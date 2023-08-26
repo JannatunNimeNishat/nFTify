@@ -3,18 +3,16 @@ import baseInfo_btn_bg from '../assets/card/card_bg.png'
 import baseInfo_icon from '../assets/card/baseInfo_icon.png'
 import material_symbols from '../assets/card/material-symbols_token-outline.png'
 
-const NFTpairRow = ({ nftSinglePair }) => {
-
-    // console.log(nftSinglePair);
+const NFTsearchRow = ({ nftSinglePair }) => {
 
     const { pairCreatedAt, dexId, pairAddress, baseToken, quoteToken, priceNative, priceUsd } = nftSinglePair;
-    // console.log(pairCreatedAt, typeof(pairCreatedAt));
+    console.log(nftSinglePair);
     return (
-        <div className='h-screen mt-[22px] flex gap-3'>
+        <div className='mt-[22px] flex gap-3'>
             {/* basic info */}
             <div className=" relative w-[230px] h-[220px]  bg-[#390554] rounded-[10px] text-white px-5 py-4">
                 <h3 className="font-bold text-[18px]">Basic Info</h3>
-                <p className="pt-2">Pair created at <span className="ml-3">#{pairCreatedAt.toString().slice(0,4)}</span></p>
+                <p className="pt-2">Pair created at <span className="ml-3">{baseToken?.name?.split(" ")[0]}</span></p>
                 <p className="pt-1">Symbol <span className="ml-16">{baseToken?.symbol}</span></p>
                 <p className="w-full  pt-1 ">Dex ID <span className=" ml-16">#{dexId.slice(0, 3)}</span></p>
                 <p className="w-full  pt-1 ">Pair Address <span className="ml-7   ">#{pairAddress.slice(0, 4)}</span></p>
@@ -63,4 +61,4 @@ const NFTpairRow = ({ nftSinglePair }) => {
     );
 };
 
-export default NFTpairRow;
+export default NFTsearchRow;
