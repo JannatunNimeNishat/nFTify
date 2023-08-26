@@ -6,6 +6,7 @@ import content_bg from './assets/contenet_area/content_bg.png';
 import searchIcon from './assets/contenet_area/searchIcon.png';
 import axios from 'axios';
 import NFTrow from './components/NFTrow';
+import NFTpairRow from './components/NFTpairRow';
 function App() {
   const [activeLink, setActiveLink] = useState(1);
   const [nftData, setNftData] = useState([]);
@@ -28,7 +29,7 @@ function App() {
       .catch(error => console.log(error))
 
   }
-  console.log(nftData);
+  // console.log(nftData);
   return (
     <>
       <div className="drawer lg:drawer-open">
@@ -80,7 +81,7 @@ function App() {
                 {/* cards */}
                 <div>
                   {
-                    nftData.slice(0, 2).map((nftSinglePair, index) => <NFTrow
+                    nftData.slice(0, 2).map((nftSinglePair, index) => <NFTpairRow
                       key={index}
                       nftSinglePair={nftSinglePair}
                     />)
